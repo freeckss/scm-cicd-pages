@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCM & CI/CD Pipeline Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="badge">CI/CD Active</div>
+    <h1>Software Configuration Management</h1>
+    <p class="subtitle">Automated Linting & Deployment via GitHub Actions</p>
+    
+    <div class="pipeline">
+      <div class="step success">1. Git Push</div>
+      <div class="arrow">→</div>
+      <div class="step success">2. ESLint Quality Gate</div>
+      <div class="arrow">→</div>
+      <div class="step success">3. GitHub Pages Deploy</div>
+    </div>
+
+    <div class="actions">
+      <button id="statusBtn">Check System Status</button>
+      <p id="output"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

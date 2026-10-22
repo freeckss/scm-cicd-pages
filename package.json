@@ -1,0 +1,14 @@
+{
+  "name": "scm-cicd-static-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site demonstrating CI/CD with automated linting and GitHub Pages deployment",
+  "scripts": {
+    "lint": "eslint script.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0"
+  }
+}
