@@ -1,4 +1,4 @@
-name: CI/CD - Lint & Deploy to GitHub Pages
+name: CI/CD - Lint, Test & Deploy to GitHub Pages
 
 on:
   push:
@@ -34,8 +34,27 @@ jobs:
       - name: Quality Check (Linter)
         run: npm run lint
 
-  deploy:
+  test:
     needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Automated Unit Tests (Jest)
+        run: npm test
+
+  deploy:
+    needs: [lint, test]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -8,7 +8,8 @@ export default [
       ecmaVersion: "latest",
       sourceType: "script",
       globals: {
-        ...globals.browser
+        ...globals.browser,
+        ...globals.node
       }
     },
     rules: {

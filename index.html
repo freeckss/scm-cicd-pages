@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SCM & CI/CD Pipeline Demo</title>
+  <title>SCM CI/CD with Automated Testing</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="card">
-    <div class="badge">CI/CD Active</div>
+    <div class="badge">CI/CD Pipeline Active</div>
     <h1>Software Configuration Management</h1>
-    <p class="subtitle">Automated Linting & Deployment via GitHub Actions</p>
-    
+    <p class="subtitle">Automated Linting, Unit Testing & GitHub Pages Deploy</p>
+
     <div class="pipeline">
       <div class="step success">1. Git Push</div>
       <div class="arrow">→</div>
-      <div class="step success">2. ESLint Quality Gate</div>
+      <div class="step success">2. ESLint Check</div>
       <div class="arrow">→</div>
-      <div class="step success">3. GitHub Pages Deploy</div>
+      <div class="step success">3. Jest Unit Tests</div>
+      <div class="arrow">→</div>
+      <div class="step success">4. Pages Deploy</div>
     </div>
 
-    <div class="actions">
-      <button id="statusBtn">Check System Status</button>
-      <p id="output"></p>
+    <div class="metrics">
+      <p>Page Loaded At: <strong id="pageLoadTimestamp">--:--:--</strong></p>
+      <p>Active Session Duration: <strong id="uptimeDisplay">0m 0s</strong></p>
     </div>
   </div>
 
